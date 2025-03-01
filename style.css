@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    --pacman-yellow: #ffff00;
+    --ghost-red: #ff0000;
+    --ghost-pink: #ffb8ff;
+    --ghost-blue: #00ffff;
+    --ghost-orange: #ffb847;
+    --maze-blue: #2121ff;
+    --text-white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    color: var(--pacman-yellow);
+    font-family: 'Press Start 2P', cursive;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.screen {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    padding: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.title {
+    font-size: 48px;
+    margin-bottom: 40px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0.5; }
+}
+
+.input-container {
+    margin: 20px 0;
+}
+
+input[type="text"] {
+    background: transparent;
+    border: 2px solid var(--pacman-yellow);
+    color: var(--pacman-yellow);
+    padding: 15px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+}
+
+.arcade-button {
+    background: var(--pacman-yellow);
+    border: none;
+    color: #000000;
+    padding: 20px 40px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 20px;
+    transition: all 0.3s ease;
+}
+
+.arcade-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px var(--pacman-yellow);
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.score-board, .high-score, .player-info {
+    text-align: center;
+}
+
+#gameCanvas {
+    border: 2px solid var(--pacman-yellow);
+    background: #000000;
+    margin: 0 auto;
+    display: block;
+}
+
+.lives-container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#lives {
+    display: flex;
+    gap: 10px;
+}
+
+.life {
+    width: 20px;
+    height: 20px;
+    background: var(--pacman-yellow);
+    border-radius: 50%;
+}
+
+#game-over-screen .title {
+    color: var(--ghost-red);
+}
+
+.final-score {
+    font-size: 24px;
+    margin: 30px 0;
+} 
